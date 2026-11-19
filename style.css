@@ -1,0 +1,375 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f7f6fc;
+    color: #25213b;
+    line-height: 1.7;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 18px 9%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 20px rgba(35, 20, 70, 0.06);
+    backdrop-filter: blur(12px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    color: #7952d9;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+nav a {
+    color: #514b68;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background: #7952d9;
+    transition: 0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+nav a:hover,
+nav a.active {
+    color: #7952d9;
+}
+
+section {
+    padding: 100px 10%;
+    text-align: center;
+    scroll-margin-top: 75px;
+}
+
+section h2 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #30264b;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 55px;
+    height: 4px;
+    background: #9874ec;
+    margin: 12px auto 0;
+    border-radius: 10px;
+}
+
+#home {
+    min-height: 88vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(circle at 15% 20%, #eee6ff 0, transparent 35%),
+        radial-gradient(circle at 85% 80%, #e3eaff 0, transparent 35%),
+        #f7f6fc;
+}
+
+.hero {
+    max-width: 780px;
+}
+
+.profile-img {
+    width: 175px;
+    height: 175px;
+    object-fit: cover;
+    border-radius: 30px;
+    border: 5px solid white;
+    margin-bottom: 25px;
+    box-shadow: 0 12px 35px rgba(121, 82, 217, 0.2);
+    transition: 0.4s;
+}
+
+.profile-img:hover {
+    transform: rotate(-4deg) scale(1.05);
+}
+
+.hero h1 {
+    font-size: 45px;
+    font-weight: 800;
+    color: #30264b;
+    margin-bottom: 12px;
+    letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+    color: #7952d9;
+}
+
+.hero h3 {
+    font-size: 19px;
+    color: #766a91;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #77718b;
+    margin: 0 auto 30px;
+    max-width: 600px;
+    font-size: 15px;
+}
+
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #7952d9, #a27bf2);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 8px 20px rgba(121, 82, 217, 0.25);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(121, 82, 217, 0.35);
+    background: #30264b;
+}
+
+#about {
+    background: white;
+}
+
+#about p {
+    max-width: 780px;
+    margin: auto;
+    color: #77718b;
+    font-size: 16px;
+    line-height: 2;
+    background: #f8f6ff;
+    padding: 35px;
+    border-radius: 15px;
+    border-left: 4px solid #9874ec;
+}
+
+#skills {
+    background: #f7f6fc;
+}
+
+.skill-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.skill-list div {
+    background: white;
+    padding: 17px 30px;
+    border: 1px solid #ece7f7;
+    border-radius: 12px;
+    color: #51416f;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(40, 20, 70, 0.04);
+    transition: 0.3s;
+}
+
+.skill-list div:hover {
+    background: #7952d9;
+    color: white;
+    transform: translateY(-7px);
+    box-shadow: 0 10px 20px rgba(121, 82, 217, 0.2);
+}
+
+#projects {
+    background: white;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.project {
+    background: #faf9ff;
+    padding: 30px 25px;
+    border-radius: 16px;
+    border: 1px solid #eee9f8;
+    text-align: left;
+    transition: 0.35s;
+    position: relative;
+    overflow: hidden;
+}
+
+.project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #7952d9, #c3a8ff);
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    background: white;
+    box-shadow: 0 15px 35px rgba(57, 36, 94, 0.1);
+    border-color: #c9b5f5;
+}
+
+.project h3 {
+    color: #7952d9;
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.project p {
+    color: #77718b;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.project a {
+    display: inline-block;
+    color: #7952d9;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 5px 8px 5px 0;
+    transition: 0.3s;
+}
+
+.project a:hover {
+    color: #30264b;
+    text-decoration: underline;
+}
+
+#contact {
+    background: #f7f6fc;
+}
+
+#contact p {
+    margin: 15px;
+    color: #77718b;
+    font-size: 15px;
+}
+
+#contact a {
+    color: #7952d9;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#contact a:hover {
+    color: #30264b;
+}
+
+footer {
+    background: #30264b;
+    text-align: center;
+    padding: 25px;
+    color: #d8cfee;
+    font-size: 13px;
+}
+
+body.scrolled header {
+    box-shadow: 0 5px 25px rgba(35, 20, 70, 0.12);
+}
+
+@media (max-width: 900px) {
+    .project-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    section {
+        padding: 80px 7%;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 15px 5%;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    section {
+        padding: 65px 6%;
+    }
+
+    section h2 {
+        font-size: 27px;
+    }
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .hero h3 {
+        font-size: 16px;
+    }
+
+    .profile-img {
+        width: 145px;
+        height: 145px;
+    }
+
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+
+    #about p {
+        padding: 22px;
+        font-size: 14px;
+    }
+}
